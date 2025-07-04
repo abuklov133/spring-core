@@ -12,7 +12,7 @@ public class TaskConfiguration {
     }
 
     @Bean
-    public TaskManager taskManager(Task task) {
-        return new TaskManager(task);
+    public TaskManager taskManager() {
+        return new TaskManager();
     }
 }
