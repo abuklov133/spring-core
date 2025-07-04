@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext("sorokin.dev");
+                new AnnotationConfigApplicationContext(TaskConfiguration.class);
         Task task = context.getBean(Task.class);
         Task task1 = (Task) context.getBean("task");
         System.out.println(task);

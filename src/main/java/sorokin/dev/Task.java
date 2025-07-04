@@ -2,7 +2,7 @@ package sorokin.dev;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Task {
     private final String name;
     private final Long duration;
