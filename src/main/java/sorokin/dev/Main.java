@@ -7,10 +7,11 @@ public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext("sorokin.dev");
-        // Task mainTask = (Task) context.getBean("main-task");
-        //   Task notMainTask = (Task) context.getBean("not-main-task");
-        TaskManager taskManager =
-                (TaskManager) context.getBean("taskManager");
+        Task task = context.getBean(Task.class);
+        Task task1 = context.getBean(Task.class);
+        TaskManager taskManager = context.getBean(TaskManager.class);
         taskManager.printTask();
+        TaskExecutor taskExecutor = context.getBean(TaskExecutor.class);
+        taskExecutor.executeTask();
     }
 }
