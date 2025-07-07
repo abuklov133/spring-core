@@ -1,17 +1,19 @@
 package sorokin.dev;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 
 //@Component
 public class Task {
-    private final String name;
+   /* private final String name;
     private final Long duration;
-
+*/
     TaskManager taskManager;
 
-    public Task() {
-        this.name = "task";
-        this.duration = 60L;
+    public Task(TaskManager taskManager) {
+        this.taskManager = taskManager;
+      /*  this.name = "task";
+        this.duration = 60L;*/
     }
 
 
@@ -19,19 +21,19 @@ public class Task {
         this.taskManager = taskManager;
     }*/
 
-    public String getName() {
+   /* public String getName() {
         return name;
     }
 
     public Long getDuration() {
         return duration;
-    }
+    }*/
 
-    @Override
+  /*  @Override
     public String toString() {
         return "Task{" +
                 "name='" + name + '\'' +
                 ", duration=" + duration +
                 '}';
-    }
+    }*/
 }

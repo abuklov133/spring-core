@@ -20,13 +20,13 @@ public class TaskManager {
 
 
     public void printTask() {
-        System.out.println("Current task " + task.toString());
+        System.out.println("Current task " + task);
     }
 
-    @Override
+   /* @Override
     public String toString() {
         return "TaskManager{" +
                 "task=" + task +
                 '}';
-    }
+    }*/
 }
