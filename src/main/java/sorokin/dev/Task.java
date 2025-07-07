@@ -1,5 +1,7 @@
 package sorokin.dev;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
@@ -8,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component("main-task")
-@Scope("prototype")
+//@Scope("prototype")
 public class Task {
     private final String name;
     private final Long duration;
@@ -26,6 +28,16 @@ public class Task {
 
     public Long getDuration() {
         return duration;
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("Required Task postConstruct");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        System.out.println("Required Task preDestroy");
     }
 
     @Override
