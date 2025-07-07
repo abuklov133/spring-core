@@ -14,10 +14,10 @@ public class Task {
         this.duration = 60L;
     }
 
-    @Autowired
-    public void setTaskManager(TaskManager taskManager) {
+
+    /*public void setTaskManager(TaskManager taskManager) {
         this.taskManager = taskManager;
-    }
+    }*/
 
     public String getName() {
         return name;

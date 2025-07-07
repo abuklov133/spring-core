@@ -14,14 +14,14 @@ public class TaskConfiguration {
         return new Task();
     }
 
-/*    @Bean("not-main-task")
+    @Bean("not-main-task")
     public Task task2() {
         return new Task();
-    }*/
+    }
 
     @Bean
     public TaskManager taskManager(
-            Task task
+            @Qualifier("not-main-task") Task task
     ) {
         return new TaskManager(task);
     }

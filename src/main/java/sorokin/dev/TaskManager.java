@@ -8,7 +8,7 @@ public class TaskManager {
 
     private final Task task;
 
-    @Autowired
+    //@Autowired
     public TaskManager(Task task) {
         this.task = task;
     }
