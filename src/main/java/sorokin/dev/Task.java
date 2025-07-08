@@ -3,22 +3,26 @@ package sorokin.dev;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component("main-task")
-//@Scope("prototype")
 public class Task {
     private final String name;
-    private final Long duration;
+    private final Integer duration;
 
-    public Task() {
-        this.name = "task";
-        this.duration = 60L;
-        System.out.println("Coll task constructor");
+    public Task(
+            @Value("${task.name}") String name,
+            @Value("${task.duration}") Integer duration
+    ) {
+        this.name = name;
+        this.duration = duration;
+        //System.out.println("Coll task constructor");
     }
 
 
@@ -26,11 +30,11 @@ public class Task {
         return name;
     }
 
-    public Long getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 
-    @PostConstruct
+  /*  @PostConstruct
     public void postConstruct() {
         System.out.println("Required Task postConstruct");
     }
@@ -38,7 +42,7 @@ public class Task {
     @PreDestroy
     public void preDestroy() {
         System.out.println("Required Task preDestroy");
-    }
+    }*/
 
     @Override
     public String toString() {

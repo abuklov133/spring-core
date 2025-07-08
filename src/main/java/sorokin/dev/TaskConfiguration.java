@@ -7,18 +7,18 @@ import org.springframework.stereotype.Service;
 
 //@Configuration
 public class TaskConfiguration {
-    @Bean("main-task")
-    @Scope("prototype")
-    public Task task() {
+ /*   @Bean("main-task")
+    @Scope("prototype")*/
+   /* public Task task() {
         return new Task();
-    }
+    }*/
 
    /* @Bean("not-main-task")
     public Task task2() {
         return new Task();
     }*/
 
-    @Bean
+   /* @Bean
     public TaskManager taskManager(
             @Qualifier("main-task") Task task
     ) {
@@ -28,5 +28,5 @@ public class TaskConfiguration {
     @Bean
     public TaskExecutor taskExecutor(@Qualifier("main-task") Task task) {
         return new TaskExecutor(task());
-    }
+    }*/
 }
