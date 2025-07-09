@@ -5,6 +5,7 @@ import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import sorokin.dev.aop.Loggable;
 
 @Component
 public class TaskManager {
@@ -21,12 +22,14 @@ public class TaskManager {
         return task;
     }
 
+    @Loggable
     public Integer printTask() {
         System.out.println("Current task " + task);
+        //throw new RuntimeException("Exeption in TaskManager");
         return task.getDuration();
     }
 
-   /* @PostConstruct
+    @PostConstruct
     public void init() {
         System.out.println("Required init taskManager");
     }
@@ -34,7 +37,7 @@ public class TaskManager {
     @PreDestroy
     public void destroy() {
         System.out.println("Required destroy taskManager");
-    }*/
+    }
 
 
 }

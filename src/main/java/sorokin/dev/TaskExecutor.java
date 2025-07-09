@@ -1,6 +1,7 @@
 package sorokin.dev;
 
 import org.springframework.stereotype.Component;
+import sorokin.dev.aop.Loggable;
 
 @Component
 public class TaskExecutor {
@@ -11,6 +12,7 @@ public class TaskExecutor {
         this.task = task;
     }
 
+    @Loggable("Error")
     public void executeTask() {
        /* System.out.println("Я выполняю задачу " + task.getName()
                 + " за время " + task.getDuration());*/

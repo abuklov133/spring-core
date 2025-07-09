@@ -10,6 +10,12 @@ public class Main {
 
         TaskManager taskManager = context.getBean(TaskManager.class);
         taskManager.printTask();
+      /*  Task task = context.getBean(Task.class);
+        System.out.println(task.toString());*/
+       /* TaskManager taskManager = context.getBean(TaskManager.class);
+        System.out.println(taskManager.printTask());*/
+        TaskExecutor taskExecutor = context.getBean(TaskExecutor.class);
+        taskExecutor.executeTask();
 
         context.close();
     }

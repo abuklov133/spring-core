@@ -33,8 +33,8 @@ public class Task {
     public Integer getDuration() {
         return duration;
     }
-
-  /*  @PostConstruct
+/*
+    @PostConstruct
     public void postConstruct() {
         System.out.println("Required Task postConstruct");
     }
@@ -44,6 +44,7 @@ public class Task {
         System.out.println("Required Task preDestroy");
     }*/
 
+
     @Override
     public String toString() {
         return "Task{" +
@@ -51,4 +52,5 @@ public class Task {
                 ", duration=" + duration +
                 '}';
     }
+
 }
