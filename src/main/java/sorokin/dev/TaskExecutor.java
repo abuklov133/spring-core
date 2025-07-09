@@ -12,7 +12,7 @@ public class TaskExecutor {
         this.task = task;
     }
 
-    @Loggable("Error")
+    @Loggable(value = "Error", times = 5)
     public void executeTask() {
        /* System.out.println("Я выполняю задачу " + task.getName()
                 + " за время " + task.getDuration());*/

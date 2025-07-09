@@ -22,7 +22,7 @@ public class TaskManager {
         return task;
     }
 
-    @Loggable
+    @Loggable(times = 3)
     public Integer printTask() {
         System.out.println("Current task " + task);
         //throw new RuntimeException("Exeption in TaskManager");
